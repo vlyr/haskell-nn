@@ -21,7 +21,7 @@ startingBiases = fromList $ replicate 4 (-0.5)
 
 
 lr:: (Floating a, Element a) => a
-lr = 0.001
+lr = 0.01
 
 startingWeights :: (Floating a, Element a) => Matrix a
 startingWeights = (4><2) $ replicate 8 0.25
@@ -54,6 +54,9 @@ layer a' w' b' g = fromList $ map (\(x, idx) -> g $ dotProd (inputs!!idx) (weigh
     biases = toList b' 
 
 errorCalc xs' ys' = [x - y | x <- xs', y <- ys']
+
+step :: (Floating a, Element a, Ord a) => Vector a -> Vector a
+step vec = fromList $ map (\x -> if x > 0.5 then 1 else 0) $ toList vec
 
 -- sequential :: (Element a, Floating a) => Matrix a -> Matrix a -> Vector a -> Matrix a -> Vector a -> (a -> a) -> Vector a
 -- sequential x w1 b1 w2 b2 g = layer ( layer x w1 b1 g ) w2 b2 g
