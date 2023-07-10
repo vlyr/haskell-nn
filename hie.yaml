@@ -1,0 +1,13 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:neuro"
+
+    - path: "app/Main.hs"
+      component: "neuro:exe:neuro-exe"
+
+    - path: "app/Paths_neuro.hs"
+      component: "neuro:exe:neuro-exe"
+
+    - path: "test"
+      component: "neuro:test:neuro-test"
