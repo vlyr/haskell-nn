@@ -1,13 +1,13 @@
 cradle:
   cabal:
     - path: "src"
-      component: "lib:neuro"
+      component: "lib:haskell-nn"
 
     - path: "app/Main.hs"
-      component: "neuro:exe:neuro-exe"
+      component: "haskell-nn:exe:haskell-nn-exe"
 
-    - path: "app/Paths_neuro.hs"
-      component: "neuro:exe:neuro-exe"
+    - path: "app/Paths_haskell_nn.hs"
+      component: "haskell-nn:exe:haskell-nn-exe"
 
     - path: "test"
-      component: "neuro:test:neuro-test"
+      component: "haskell-nn:test:haskell-nn-test"
